@@ -1,22 +1,26 @@
-class declare_number{
-    public int num1;
-    public int num2;
+interface run {
+    public void run1();
 }
-class set_num extends declare_number{
-    public void get_num(int a,int b){
-        num1 = a;
-        num2 = b;
+
+interface walk {
+    public void walk1();
+}
+
+class human implements run,walk{
+
+    public void run1() {
+        System.out.println("I can run");
+    }
+    public void walk1() {
+        System.out.println("I can walk");
     }
 }
-class add_number extends set_num{
-    public int add_num(){
-        return num1 + num2;
-    }
-}
+
+
 public class pr15 {
     public static void main(String[] args) {
-        add_number a1 = new add_number();
-        a1.get_num(5,5);
-        System.out.println("The sum of the number is : "+ a1.add_num());
+        human a1 = new human();
+        a1.run1();
+        a1.walk1();
     }
 }
